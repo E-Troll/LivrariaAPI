@@ -1,5 +1,6 @@
-'use strict';
+'use strict'
 
+const app = require('../src/app');
 const http = require('http');
 const debug = require('debug')('livraria-api:server');
 const express = require('express');
