@@ -12,7 +12,7 @@ app.set('port', defaultPort);
 function normalizePort(val) {
     const port = parseInt(val, 10);
     if (isNaN(port)) {
-        // Nome do pip
+        // Nome da pipe
         return val;
     }
     if (port >= 0) {
@@ -32,11 +32,6 @@ const route = router.get('/', (req, res, next) => {
     });
 });
 app.use('/', route);
-
-server.listen(port);
-server.on('erro, onError');
-server.on('listening', onListening);
-
 
 // Normaliza a porta e verifica se está disponível
 const port = normalizePort(process.env.PORT || defaultPort);
@@ -62,7 +57,7 @@ server.on('error', (error) => {
     }
 });
 
+// Inicia o servidor após o tratamento de erros
 server.listen(port, () => {
     console.log('API Rodando na porta ' + port);
 });
-
