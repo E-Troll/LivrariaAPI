@@ -12,7 +12,7 @@ app.set('port', defaultPort);
 function normalizePort(val) {
     const port = parseInt(val, 10);
     if (isNaN(port)) {
-        // Nome da pipe
+        // Nome do pip
         return val;
     }
     if (port >= 0) {
