@@ -3,7 +3,6 @@ const http = require('http');
 const debug = require('debug')('livraria-api:server');
 const express = require('express');
 
-const app = express();
 const defaultPort = 3000; // Porta padrão
 app.set('port', defaultPort);
 
