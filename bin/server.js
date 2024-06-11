@@ -24,13 +24,6 @@ function normalizePort(val) {
 const server = http.createServer(app);
 const router = express.Router();
 
-const route = router.get('/', (req, res, next) => {
-    res.status(200).send({
-        title: "Livraria Store API",
-        version: "0.0.1"
-    });
-});
-app.use('/', route);
 
 // Normaliza a porta e verifica se está disponível
 const port = normalizePort(process.env.PORT || defaultPort);
