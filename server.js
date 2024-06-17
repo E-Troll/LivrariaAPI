@@ -15,6 +15,7 @@ app.post('/users', async (req, res) => {
   });
 
   res.status(201).json(user);
+  
 });
 
 app.get('/users', async (req, res) => {
