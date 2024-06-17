@@ -10,8 +10,7 @@ app.post('/users', async (req, res) => {
     data: {
       email: req.body.email,
       Nome: req.body.Nome,
-      Idade: req.body.Idade,
-    },
+      },
   });
 
   res.status(201).json(req.body);
