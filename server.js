@@ -10,7 +10,7 @@ app.post('/users', async (req, res) => {
     data: {
       email: req.body.email,
       Nome: req.body.Nome,
-      },
+      }
   });
 
   res.status(201).json(req.body);
@@ -29,7 +29,7 @@ app.post('/Livros', async (req, res) => {
       titulo: req.body.titulo,
       Categoria: req.body.Categoria,
       Autor: req.body.Autor,
-    },
+    }
   });
 
   res.status(201).json(req.body);
