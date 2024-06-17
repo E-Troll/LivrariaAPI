@@ -1,4 +1,7 @@
 import express from 'express'
+import { PrismaClient } = require('@prisma/client')
+
+const prisma = new PrismaClient()
 
 const app = express()
 app.use(express.json())
@@ -8,9 +11,15 @@ const users = []
 
 app.post('/users', (req, res) =>{
 
-    users.push(req.body)
+  await prisma.user.create ({
+        data: {
+            email: req.body.email,
+            Nome: req.body.Nome,
+            Idade: req.body.Idade,
+        }
+    })
 
-    res.send('Login Efetuado com sucesso')
+  res.status(201).json('req.body')
 })
 
 app.get('/users', (req, res) =>{
@@ -21,7 +30,7 @@ app.post('/Livros', (req, res) =>{
 
     Livros.push(req.body)
 
-    res.send('Livro inserido com Sucesso !')
+    res.status(201).json('req.body')
 })
 
 app.get('/Livros', (req, res) =>{
@@ -31,6 +40,3 @@ app.get('/Livros', (req, res) =>{
 app.listen(3000)
 
 
-/*  
-u5EmJtMNNlMSNWgo
-*\
