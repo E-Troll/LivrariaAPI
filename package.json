@@ -1,17 +1,21 @@
 {
-  "name": "dev",
+  "name": "api",
   "version": "1.0.0",
-  "main": "server.js",
+  "type": "module",
+  "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "description": "",
   "dependencies": {
-    "debug": "^4.3.5",
-    "express": "^4.19.2",
-    "http": "^0.0.1-security"
+    "@prisma/client": "^5.15.0",
+    "express": "^4.19.2"
+  },
+  "devDependencies": {
+    "prisma": "^5.15.0"
   }
 }

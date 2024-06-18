@@ -1,2 +1,0 @@
-# LivrariaAPI
-Aplicação teste
