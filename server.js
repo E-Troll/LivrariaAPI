@@ -9,12 +9,17 @@ app.post('/users', async (req, res) => {
  await prisma.user.create({
     data: {
       email: req.body.email,
-      Nome: req.body.Nome,
+      Nome: req.body.Nome
       }
   });
 
   res.status(201).json(req.body);
   
+});
+
+app.get('/users', async (req, res) => {
+  const user = await prisma.user.findMany();
+  res.status(200).json(user);
 });
 
 app.post('/Livros', async (req, res) => {
@@ -23,7 +28,7 @@ app.post('/Livros', async (req, res) => {
       ISBN: req.body.ISBN,
       titulo: req.body.titulo,
       Categoria: req.body.Categoria,
-      Autor: req.body.Autor,
+      Autor: req.body.Autor
     }
   });
 
