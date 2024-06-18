@@ -17,11 +17,6 @@ app.post('/users', async (req, res) => {
   
 });
 
-app.get('/users', async (req, res) => {
-  const user = await prisma.user.findMany();
-  res.status(200).json(user);
-});
-
 app.post('/Livros', async (req, res) => {
   await prisma.post.create({
     data: {
