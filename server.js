@@ -37,7 +37,7 @@ app.put('/users/:email', async (req, res) => {
 });
 
 app.post('/Livros', async (req, res) => {
-  await prisma.post.create({
+   await prisma.post.create({
     data: {
       ISBN: req.body.ISBN,
       titulo: req.body.titulo,
@@ -55,7 +55,7 @@ app.get('/Livros', async (req, res) => {
 });
 
 app.put('/Livros/:ISBN', async (req, res) => {
-  const updatedLivro = await prisma.livro.update({
+  const updatedLivro = await prisma.post.update({
     where: {
       ISBN: req.params.ISBN
     },
@@ -64,6 +64,7 @@ app.put('/Livros/:ISBN', async (req, res) => {
       titulo: req.body.titulo,
       Categoria: req.body.Categoria,
       Autor: req.body.Autor
+
     }
   });
 
